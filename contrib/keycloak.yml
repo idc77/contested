@@ -1,0 +1,27 @@
+discovery-url: https://connect.icod.de/auth/realms/contested.de
+client-id: web-client
+listen: unix:///tmp/contested.de-proxy.sock
+enable-refresh-tokens: true
+encryption-key: 4JCIypbE3MlOuwgpr4N8ispP4Aioo2kg
+upstream-url: unix:///tmp/contested.de.sock
+secure-cookie: false
+no-redirects: true
+verbose: true
+cors-origins: ['*']
+cors-methods: [GET, POST, PUT, OPTIONS, DELETE]
+cors-headers: ['*']
+resources:
+- uri: /api/v1/*
+  methods:
+  - GET
+  - HEAD
+  - OPTIONS
+  white-listed: true
+- uri: /api/v1/*
+  methods:
+  - DELETE
+  - PATCH
+  - POST
+  - PUT
+  - TRACE
+
