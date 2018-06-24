@@ -84,104 +84,104 @@ func (h *Handler) RaidPut(cx *gin.Context) {
 	}
 	if n.KeycloakId != m.KeycloakId {
 		// MT
-		if n.Setup.MT.Rules.Tank != m.Setup.MT.Rules.Tank {
+		if n.Setup.MT.Rules.Slot1 != m.Setup.MT.Rules.Slot1 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.MT.Rules.SwashOrHatetransfer != m.Setup.MT.Rules.SwashOrHatetransfer {
+		if n.Setup.MT.Rules.Slot2 != m.Setup.MT.Rules.Slot2 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.MT.Rules.DirgeOrBard != m.Setup.MT.Rules.DirgeOrBard {
+		if n.Setup.MT.Rules.Slot3 != m.Setup.MT.Rules.Slot3 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.MT.Rules.CoercerOrEnchanter != m.Setup.MT.Rules.CoercerOrEnchanter {
+		if n.Setup.MT.Rules.Slot4 != m.Setup.MT.Rules.Slot4 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.MT.Rules.DefilerOrWarder != m.Setup.MT.Rules.DefilerOrWarder {
+		if n.Setup.MT.Rules.Slot5 != m.Setup.MT.Rules.Slot5 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.MT.Rules.TemplarOrHealer != m.Setup.MT.Rules.TemplarOrHealer {
+		if n.Setup.MT.Rules.Slot6 != m.Setup.MT.Rules.Slot6 {
 			cx.AbortWithStatus(403)
 			return
 		}
 		// OT
-		if n.Setup.OT.Rules.Tank != m.Setup.OT.Rules.Tank {
+		if n.Setup.OT.Rules.Slot1 != m.Setup.OT.Rules.Slot1 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.OT.Rules.CoercerOrEnchanter != m.Setup.OT.Rules.CoercerOrEnchanter {
+		if n.Setup.OT.Rules.Slot2 != m.Setup.OT.Rules.Slot2 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.OT.Rules.DirgeOrBard != m.Setup.OT.Rules.DirgeOrBard {
+		if n.Setup.OT.Rules.Slot3 != m.Setup.OT.Rules.Slot3 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.OT.Rules.ShamanOrHealer != m.Setup.OT.Rules.ShamanOrHealer {
+		if n.Setup.OT.Rules.Slot4 != m.Setup.OT.Rules.Slot4 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.OT.Rules.ClericOrHealer != m.Setup.OT.Rules.ClericOrHealer {
+		if n.Setup.OT.Rules.Slot5 != m.Setup.OT.Rules.Slot5 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.OT.Rules.DPSOrHatetransfer != m.Setup.OT.Rules.DPSOrHatetransfer {
+		if n.Setup.OT.Rules.Slot6 != m.Setup.OT.Rules.Slot6 {
 			cx.AbortWithStatus(403)
 			return
 		}
 
 		// DPS1
-		if n.Setup.DPS1.Rules.DPS != m.Setup.DPS1.Rules.DPS {
+		if n.Setup.DPS1.Rules.Slot1 != m.Setup.DPS1.Rules.Slot1 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS1.Rules.Bard != m.Setup.DPS1.Rules.Bard {
+		if n.Setup.DPS1.Rules.Slot2 != m.Setup.DPS1.Rules.Slot2 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS1.Rules.DPSOrTank != m.Setup.DPS1.Rules.DPSOrTank {
+		if n.Setup.DPS1.Rules.Slot3 != m.Setup.DPS1.Rules.Slot3 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS1.Rules.Enchanter != m.Setup.DPS1.Rules.Enchanter {
+		if n.Setup.DPS1.Rules.Slot4 != m.Setup.DPS1.Rules.Slot4 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS1.Rules.HealerOrDPS != m.Setup.DPS1.Rules.HealerOrDPS {
+		if n.Setup.DPS1.Rules.Slot5 != m.Setup.DPS1.Rules.Slot5 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS1.Rules.Healer != m.Setup.DPS1.Rules.Healer {
+		if n.Setup.DPS1.Rules.Slot6 != m.Setup.DPS1.Rules.Slot6 {
 			cx.AbortWithStatus(403)
 			return
 		}
 
 		// DPS2
-		if n.Setup.DPS2.Rules.DPS != m.Setup.DPS2.Rules.DPS {
+		if n.Setup.DPS2.Rules.Slot1 != m.Setup.DPS2.Rules.Slot1 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS2.Rules.Bard != m.Setup.DPS2.Rules.Bard {
+		if n.Setup.DPS2.Rules.Slot2 != m.Setup.DPS2.Rules.Slot2 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS2.Rules.DPSOrTank != m.Setup.DPS2.Rules.DPSOrTank {
+		if n.Setup.DPS2.Rules.Slot3 != m.Setup.DPS2.Rules.Slot3 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS2.Rules.Enchanter != m.Setup.DPS2.Rules.Enchanter {
+		if n.Setup.DPS2.Rules.Slot4 != m.Setup.DPS2.Rules.Slot4 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS2.Rules.HealerOrDPS != m.Setup.DPS2.Rules.HealerOrDPS {
+		if n.Setup.DPS2.Rules.Slot5 != m.Setup.DPS2.Rules.Slot5 {
 			cx.AbortWithStatus(403)
 			return
 		}
-		if n.Setup.DPS2.Rules.Healer != m.Setup.DPS2.Rules.Healer {
+		if n.Setup.DPS2.Rules.Slot6 != m.Setup.DPS2.Rules.Slot6 {
 			cx.AbortWithStatus(403)
 			return
 		}

@@ -20,32 +20,41 @@ func initDefaultSetup() {
 	defaultSetup = new(models.RaidSetup)
 	defaultSetup.Sitsize = 4
 
-	defaultSetup.MT = new(models.MTGroup)
-	defaultSetup.MT.Rules = new(models.MTRules)
-	defaultSetup.MT.Rules.Tank = "tank"
-	defaultSetup.MT.Rules.DirgeOrBard = "dirge"
-	defaultSetup.MT.Rules.CoercerOrEnchanter = "coercer"
-	defaultSetup.MT.Rules.TemplarOrHealer = "templar"
-	defaultSetup.MT.Rules.DefilerOrWarder = "defiler"
-	defaultSetup.MT.Rules.SwashOrHatetransfer = "hatetransfer"
+	defaultSetup.MT = new(models.RaidGroup)
+	defaultSetup.MT.Rules = new(models.RaidGroupRules)
+	defaultSetup.MT.Rules.Slot1 = "tank"
+	defaultSetup.MT.Rules.Slot2 = "dirge"
+	defaultSetup.MT.Rules.Slot3 = "coercer"
+	defaultSetup.MT.Rules.Slot4 = "templar"
+	defaultSetup.MT.Rules.Slot5 = "defiler"
+	defaultSetup.MT.Rules.Slot6 = "hatetransfer"
 
-	defaultSetup.OT = new(models.OTGroup)
-	defaultSetup.OT.Rules = new(models.OTRules)
-	defaultSetup.OT.Rules.Tank = "tank"
-	defaultSetup.OT.Rules.CoercerOrEnchanter = "coercer"
-	defaultSetup.OT.Rules.DirgeOrBard = "dirge"
-	defaultSetup.OT.Rules.ClericOrHealer = "healer"
-	defaultSetup.OT.Rules.ShamanOrHealer = "shaman"
-	defaultSetup.OT.Rules.DPSOrHatetransfer = "dps"
+	defaultSetup.OT = new(models.RaidGroup)
+	defaultSetup.OT.Rules = new(models.RaidGroupRules)
+	defaultSetup.OT.Rules.Slot1 = "tank"
+	defaultSetup.OT.Rules.Slot2 = "dirge"
+	defaultSetup.OT.Rules.Slot3 = "coercer"
+	defaultSetup.OT.Rules.Slot4 = "healer"
+	defaultSetup.OT.Rules.Slot5 = "shaman"
+	defaultSetup.OT.Rules.Slot6 = "scout,hatetransfer"
 
-	defaultSetup.DPS1 = new(models.DPSGroup)
-	defaultSetup.DPS1.Rules = new(models.DPSRules)
-	defaultSetup.DPS1.Rules.Bard = "troubador"
-	defaultSetup.DPS1.Rules.Enchanter = "illusionist"
-	defaultSetup.DPS1.Rules.DPS = "mage"
+	defaultSetup.DPS1 = new(models.RaidGroup)
+	defaultSetup.DPS1.Rules = new(models.RaidGroupRules)
+	defaultSetup.DPS1.Rules.Slot1 = "dps,tank"
+	defaultSetup.DPS1.Rules.Slot2 = "troubador"
+	defaultSetup.DPS1.Rules.Slot3 = "illusionist"
+	defaultSetup.DPS1.Rules.Slot4 = "mage"
+	defaultSetup.DPS1.Rules.Slot5 = "dps,healer"
+	defaultSetup.DPS1.Rules.Slot6 = "healer"
 
-	defaultSetup.DPS2 = new(models.DPSGroup)
-	defaultSetup.DPS2.Rules = new(models.DPSRules)
+	defaultSetup.DPS2 = new(models.RaidGroup)
+	defaultSetup.DPS2.Rules = new(models.RaidGroupRules)
+	defaultSetup.DPS2.Rules.Slot1 = "dps,tank"
+	defaultSetup.DPS2.Rules.Slot2 = "bard"
+	defaultSetup.DPS2.Rules.Slot3 = "enchanter"
+	defaultSetup.DPS2.Rules.Slot4 = "dps"
+	defaultSetup.DPS2.Rules.Slot5 = "healer"
+	defaultSetup.DPS2.Rules.Slot6 = "dps,healer"
 }
 
 func DefaultRaid() *models.Raid {
