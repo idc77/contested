@@ -88,5 +88,9 @@ func (h *Handler) RaiderDelete(cx *gin.Context) {
 		cx.AbortWithStatus(403)
 		return
 	}
+	if e := h.repo.RaiderRemove(id); e != nil {
+		cx.AbortWithError(500, e)
+		return
+	}
 	cx.SecureJSON(200, map[string]interface{}{})
 }

@@ -2,10 +2,8 @@ package restful
 
 import (
 	"dalu/contested/models"
-
-	"strings"
-
 	"dalu/contested/util"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -58,4 +56,21 @@ func (h *Handler) CensusSearch(cx *gin.Context) {
 		return
 	}
 	cx.AbortWithStatus(400)
+}
+
+func (h *Handler) CensusUpdate(cx *gin.Context) {
+	id := cx.Param("id")
+	if id == "" {
+		cx.AbortWithStatus(400)
+		return
+	}
+	params := new(models.CensusParams)
+	params.Id = id
+
+	m, e := util.CensusRequest(params)
+	if e != nil {
+		cx.AbortWithError(500, e)
+		return
+	}
+	cx.SecureJSON(200, m)
 }

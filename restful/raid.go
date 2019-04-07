@@ -215,5 +215,9 @@ func (h *Handler) RaidDelete(cx *gin.Context) {
 		cx.AbortWithError(500, e)
 		return
 	}
+	if _, e := h.repo.RaidNotesRemove(bson.M{"raid_id": id}); e != nil {
+		cx.AbortWithError(500, e)
+		return
+	}
 	cx.SecureJSON(200, map[string]interface{}{})
 }

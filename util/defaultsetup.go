@@ -100,7 +100,7 @@ func initRaidClasses() {
 
 	m = new(models.RaidClass)
 	m.Name = "Swashbuckler"
-	m.Roles = []string{"swashbuckler", "scout", "dps", "rogue"}
+	m.Roles = []string{"swashbuckler", "scout", "dps", "rogue", "hatetransfer"}
 	raidClasses = append(raidClasses, m)
 
 	m = new(models.RaidClass)

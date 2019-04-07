@@ -3,6 +3,7 @@ package repo
 import (
 	"dalu/contested/models"
 
+	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 )
 
@@ -47,4 +48,19 @@ func (r *Repo) RaidRemove(id string) error {
 	defer ms.Close()
 	c := ms.DB(r.database).C(r.raidCollection)
 	return c.RemoveId(bson.ObjectIdHex(id))
+}
+
+func (r *Repo) RaidWatch() (*mgo.ChangeStream, error) {
+	ms := r.ms.Copy()
+	defer ms.Close()
+	c := ms.DB(r.database).C(r.raidCollection)
+	pipeline := []bson.M{}
+	return c.Watch(pipeline, mgo.ChangeStreamOptions{})
+}
+
+func (r *Repo) RaidWatchClose(changeStream *mgo.ChangeStream) error {
+	if e := changeStream.Close(); e != nil {
+		return e
+	}
+	return nil
 }

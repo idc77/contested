@@ -48,8 +48,13 @@ var restfulCmd = &cobra.Command{
 		defaults.GET("/raid", h.DefaultRaid)
 		defaults.GET("/classes", h.RaidClassList)
 
+		tools := v1.Group("/tools")
+		tools.POST("/joinraid", h.JoinRaid)
+		tools.POST("/leaveraid", h.LeaveRaid)
+
 		census := v1.Group("/census")
 		census.POST("/search", h.CensusSearch)
+		census.GET("/update/:id", h.CensusUpdate)
 
 		profile := v1.Group("/profile")
 		profile.GET("/", h.ProfileList)

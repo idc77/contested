@@ -3,6 +3,7 @@ package repo
 import (
 	"dalu/contested/models"
 
+	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 )
 
@@ -47,4 +48,11 @@ func (r *Repo) RaidNoteRemove(id string) error {
 	defer ms.Close()
 	c := ms.DB(r.database).C(r.raidNoteCollection)
 	return c.RemoveId(bson.ObjectIdHex(id))
+}
+
+func (r *Repo) RaidNotesRemove(q bson.M) (*mgo.ChangeInfo, error) {
+	ms := r.ms.Copy()
+	defer ms.Close()
+	c := ms.DB(r.database).C(r.raidNoteCollection)
+	return c.RemoveAll(q)
 }

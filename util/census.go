@@ -17,18 +17,20 @@ func CensusRequest(params *models.CensusParams) (*models.CensusResult, error) {
 
 	addr.Path += "/s:contested/get/eq2/character/"
 	parameters := url.Values{}
-	parameters.Add("c:limit", "20")
+
 	if params.Id != "" {
 		parameters.Add("id", params.Id)
-	}
-	if params.World != "" {
-		parameters.Add("locationdata.world", params.World)
-	}
-	if params.NameFirst != "" {
-		parameters.Add("name.first", params.NameFirst)
-	}
-	if params.NameFirstLower != "" {
-		parameters.Add("name.first_lower", params.NameFirstLower)
+	} else {
+		parameters.Add("c:limit", "20")
+		if params.World != "" {
+			parameters.Add("locationdata.world", params.World)
+		}
+		if params.NameFirst != "" {
+			parameters.Add("name.first", params.NameFirst)
+		}
+		if params.NameFirstLower != "" {
+			parameters.Add("name.first_lower", params.NameFirstLower)
+		}
 	}
 
 	addr.RawQuery = parameters.Encode()
